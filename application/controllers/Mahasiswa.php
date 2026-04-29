@@ -171,7 +171,7 @@ class Mahasiswa extends CI_Controller {
 
         $this->load->library('upload', $config);
 
-        // Jalankan upload
+        // Menjalankan upload
         if ($this->upload->do_upload('foto')) {
             return $this->upload->data('file_name');
         } else {
