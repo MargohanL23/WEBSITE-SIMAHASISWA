@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Izinkan akses langsung ke folder uploads
+RewriteRule ^uploads/ - [L]
+
+# Skip jika file/folder memang ada
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Arahkan ke index.php
+RewriteRule ^(.*)$ index.php/$1 [L]
